@@ -1,0 +1,8 @@
+Thomas Way 101146435
+Jason Reid 101146559
+
+To initialize data run $node dataInit.Jason
+To start server run $node server.js
+To access homepage, enter into browser http://localhost:3000 or click link within terminal.
+
+The name of the report is 2406_Final_Project_Report.pdf and can be found in ./

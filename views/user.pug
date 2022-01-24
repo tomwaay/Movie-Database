@@ -1,0 +1,48 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Movie Database
+  style
+    include  ../stylesheet.css
+div(class='navbar') 
+  a(href='/' class='navbar-item') Home
+  a(href='/profile' class='navbar-item') Profile
+  a(href='/userauth' class='navbar-item') Sign In/Up
+  a(href='/search' class='navbar-item') Search
+  a(href='/contribute' class='navbar-item') Contribute
+
+- var contributing = user.contributing
+
+div(class='page')
+    h1(class='header' style='float: left') #{user.username}'s Profile
+    input(type='button' value='Follow' style='margin: 2.25em 0 0 1.5em' id="followOther" class= user._id + "?"+ user.username)
+    br
+    br
+ 
+    if contributing
+        p Type: Contributuing User
+    else
+        p Type: Regular User
+    
+    br
+    b People #{user.username} follows:
+    ul
+        each person in user.followPerson
+            li
+                input(type='button' value='Follow' class = "userFollowPerson" id= person)
+                a(href='/person?'+person) #{person}
+    br
+    b Movies #{user.username} has watched:
+    ul
+        each movie in user.watched
+            li
+                a(href='/movies?'+movie._id) #{movie.Title}
+    br
+    b Reviews Written by #{user.username}:
+    ul
+        each review in user.reviews
+            li
+                a(href='/reviews/examplereview') #{review.movie}
+
+script(type = module)
+  include ../userFollowPerson.js

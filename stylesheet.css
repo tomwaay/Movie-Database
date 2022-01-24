@@ -1,0 +1,68 @@
+.navbar-item{
+    margin-left: auto;
+    margin-right: auto;
+    font-size: large;
+    color: black;
+}
+
+body{
+    background-color: gray;
+}
+
+.header{
+    text-align: center;
+}
+
+.navbar{
+    background-color: white;
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 1em;
+}
+
+ul{
+    list-style-type: none;
+    padding-inline-start: 0;
+}
+
+ul.li{
+    color: black;
+    text-decoration: none;
+}
+
+.button{
+    border-style: outset;
+    border-radius: .3em;
+    margin: .2em;
+}
+
+.page{
+    width: 70%;
+    margin: 2em auto;
+    border: 2px;
+    border-style: solid;
+    padding: 20px;
+    background-color: white;
+    border-radius: .5em;
+}
+
+a:link {
+    text-decoration: none;
+}
+br
+  
+a:hover {
+    text-decoration: none;
+}
+  
+  
+  a:active {
+    text-decoration: none;
+}
+
+#reviewText{
+    height: 5em;
+}  
+  

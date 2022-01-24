@@ -1,0 +1,87 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Movie Database
+  style
+    include  ../stylesheet.css
+div(class='navbar') 
+  a(href='/' class='navbar-item') Home
+  a(href='/profile' class='navbar-item') Profile
+  a(href='/userauth' class='navbar-item') Sign In/Up
+  a(href='/search' class='navbar-item') Search
+  a(href='/contribute' class='navbar-item') Contribute
+
+div(class='page')
+  h2(class='header') Logged in as: #{user.username}
+  input(type='button' value='Logout' id= "logoutButton" class= user.username)
+  br
+  br
+  b Select Account Type:
+  br
+  if user.contributing
+    br
+    input#accRegular(type='radio' value='regular' name='acctype' checked=false)
+    label(for='accRegular') Regular
+    br
+    input#accContributing(type='radio' value='contributing' name='acctype' checked=true)
+    label(for='accContributing') Contributing
+    br
+  else
+    br
+    input#accRegular(type='radio' value='regular' name='acctype' checked=true)
+    label(for='accRegular') Regular
+    br
+    input#accContributing(type='radio' value='contributing' name='acctype' checked=false)
+    label(for='accContributing') Contributing
+    br
+  input#acctypeSave.button(type='button' value='Save')
+  br
+  br
+  b People you follow:
+  br
+
+  ul
+    each person in user.followPerson
+      li
+        input(type='button' value='Unfollow' id= person class= "unfollowPerson")
+        a(href='/person?'+person) #{person}
+
+  b Users you follow:
+  br
+ 
+  ul
+    each person in user.followUser 
+      li
+        input#unfollowUser.button(type='button' value='Unfollow')
+        a(href='/users/otheruser?'+person._id) #{person.username}
+        
+        
+
+  b Movies you&apos;ve watched:
+  br
+ 
+  ul
+    each movie in user.watched
+      li
+        a(href='/movies?'+movie._id) #{movie.Title}
+        br
+
+  b Recomended Movies:
+  br
+
+  ul
+    each movie in user.reccomended
+      li
+        a(href='/movies?'+movie._id) #{movie.Title}
+        br
+
+  b Notifications:
+  br
+ 
+  //ul
+    li
+      input#delNotif.button(type='button' value='Delete')
+      input#viewNotif.button(type='button' value='View')
+      |  The new Star Wars isnt great. Check out the reviews.
+script(type = module)
+  include ../profilebuttons.js

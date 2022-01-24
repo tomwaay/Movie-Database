@@ -1,0 +1,85 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Movie Database
+  style
+    include  ../stylesheet.css
+div(class='navbar') 
+  a(href='/' class='navbar-item') Home
+  a(href='/profile' class='navbar-item') Profile
+  a(href='/userauth' class='navbar-item') Sign In/Up
+  a(href='/search' class='navbar-item') Search
+  a(href='/contribute' class='navbar-item') Contribute
+br
+b #{movie.Title} (#{movie.Year})
+input.follow(type='button' value='Watch' class="button" id="watchButton")
+
+br
+img(src= movie.Poster width="125" height="200")
+br
+p Runtime: #{movie.Runtime} minutes 
+// p Average Rating: #{movie.rating}/10
+p Plot: #{movie.Plot}
+p Genre(s):
+each genre in movie.Genre 
+        b #{genre}
+        br
+br
+b Directors: 
+br
+each director in movie.Director
+    a(href='/person?'+director) #{director}
+    br
+br
+
+b Similar Movies: 
+br
+each similar in movie.Similiar 
+        a(href='/movies/?'+similar.id) #{similar.Title}
+        br
+br
+b Writers:
+br
+each writer in movie.Writer
+    a(href='/person?'+writer) #{writer}
+    br
+br
+b Actors: 
+br
+each actor in movie.Actors
+    a(href='/person?'+actor) #{actor}
+    br
+br
+
+b Reviews: 
+br
+each review in movie.Reviews
+    a(href='/users/otheruser?'+review.userid) #{review.username}
+    br
+    b Score: #{review.score}
+    br
+    b Summary: #{review.summary}
+    br
+    b Text: #{review.text}
+    br
+
+br
+
+
+br
+b Add a Review: 
+br
+pb Review Score: 
+input.reviewscore(type='text' class="input-text" id="reviewScore")
+input.addbasic(type='button' value='Add Basic Review' class="button" id="addBasic")
+br
+pb Review Summary: 
+input.reviewsummary(type='text' class="input-text" id="reviewSummary")
+br
+pb Full Review Text: 
+input.reviewtext(type='text' class="input-text" id="reviewText")
+br
+input.addfull(type='button' value='Add Full Review' class="button" id="addFull")
+script(type = module)
+    include ../watchMovie.js
+    include ../scripts.js

@@ -1,0 +1,45 @@
+head
+  meta(charset='utf-8')
+  title Movie Database
+  style
+    include  ../stylesheet.css
+div(class='navbar') 
+  a(href='/' class='navbar-item') Home
+  a(href='/profile' class='navbar-item') Profile
+  a(href='/userauth' class='navbar-item') Sign In/Up
+  a(href='/search' class='navbar-item') Search
+  a(href='/contribute' class='navbar-item') Contribute
+
+div(class='page')
+  h2(class='header') Your Profile
+
+  br
+  b Add a Movie: 
+  br
+  pb Title:
+  input.contributetitle(type='text' class="input-text" id="contributeTitle")
+  br
+  pb Image URL:
+  input.contributetitle(type='text' class="input-text" id="contributeImg")
+  br
+  pb Genre:
+  input.contributetitle(type='text' class="input-text" id="contributeGenre")
+  br
+  pb Runtime:
+  input.contributetime(type='text' class="input-text" id="contributeTime")
+  br
+  pb Release Year:
+  input.contributeyear(type='text' class="input-text" id="contributeYear")
+  br
+  pb Writers:
+  input.contributewriters(type='text' class="input-text" id="contributeWriters")
+  br
+  pb Directors:
+  input.contributedirectors(type='text' class="input-text" id="contributeDirectors")
+  br
+  pb Actors:
+  input.contributeactors(type='text' class="input-text" id="contributeActors")
+  br
+  input.addmovie(type='button' value='Add Movie' class="button" id="addMovie")
+script(type = module)
+  include ../contribute.js

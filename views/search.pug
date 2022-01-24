@@ -1,0 +1,26 @@
+head
+  meta(charset='utf-8')
+  title Movie Database
+  style
+    include  ../stylesheet.css
+div(class='navbar') 
+  a(href='/' class='navbar-item') Home
+  a(href='/profile' class='navbar-item') Profile
+  a(href='/userauth' class='navbar-item') Sign In/Up
+  a(href='/search' class='navbar-item') Search
+  a(href='/contribute' class='navbar-item') Contribute
+
+div(class='page')
+  p Title:
+  input.searchtitle(type='text' class="input-text" id="titleSearch")
+  p Genre:
+  input.searchgenre(type='text' class="input-text" id="genreSearch")
+  p Actor:
+  input.searchactor(type='text' class="input-text" id="actorSearch")
+  br
+  input.search(type='button' value='Search' class="button" id="searchButton")
+
+div#results
+
+script(type = module)
+  include ../searchbutton.js

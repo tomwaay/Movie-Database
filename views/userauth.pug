@@ -1,0 +1,23 @@
+head
+  meta(charset='utf-8')
+  title Movie Database 
+  style
+    include  ../stylesheet.css
+div(class='navbar') 
+  a(href='/' class='navbar-item') Home
+  a(href='/profile' class='navbar-item') Profile
+  a(href='/userauth' class='navbar-item') Sign In/Up
+  a(href='/search' class='navbar-item') Search
+  a(href='/contribute' class='navbar-item') Contribute
+
+div(class='page')
+  h2(class='header') Sign In Page
+  p Username:
+  input.username(type='text' class="input-text" id="usernameInput")
+  p Password:
+  input.password(type='text' class="input-text" id="passwordInput")
+  br
+  input.signUp(type='button' value='Sign Up' class="button" id="signupButton")
+  input.signIn(type='button' value='Sign In' class="button" id="signinButton")
+script(type = module)
+  include ../signin.js

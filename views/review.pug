@@ -1,0 +1,25 @@
+head
+  meta(charset='utf-8')
+  title Movie Database
+  style
+    include  ../stylesheet.css
+div(class='navbar') 
+  a(href='/' class='navbar-item') Home
+  a(href='/profile' class='navbar-item') Profile
+  a(href='/userauth' class='navbar-item') Sign In/Up
+  a(href='/search' class='navbar-item') Search
+  a(href='/contribute' class='navbar-item') Contribute
+
+div(class='page')
+  h1(class='header') Review
+
+  br
+  b Reviewer: #{review.reviewer}
+  br
+  b Score: #{review.score}/10
+  br
+  b Summary Text: 
+  p #{review.summary}
+
+  b Full Text:
+  p #{review.full_review}

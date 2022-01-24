@@ -1,0 +1,51 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title Movie Database
+  style
+    include  ../stylesheet.css
+div(class='navbar') 
+  a(href='/' class='navbar-item') Home
+  a(href='/profile' class='navbar-item') Profile
+  a(href='/userauth' class='navbar-item') Sign In/Up
+  a(href='/search' class='navbar-item') Search
+  a(href='/contribute' class='navbar-item') Contribute
+br
+b Name: #{person.name}
+input.follow(type='button' value='Follow' class="button" id="followButton")
+br
+b Frequent Collaborators:
+br
+ul
+//each collab in person.collaborators 
+  li
+    a(href='/person?'+collab) #{collab}
+br
+b Work History:
+br
+each movie in person.history
+  li
+    a(href='/movies?'+movie._id) #{movie.Title}
+br
+
+b Director:
+ul
+each movie in person.directed
+  li
+    a(href='/movies?'+movie._id)  #{movie.Title}
+br
+
+
+b Writer:
+ul
+each movie in person.writer
+  li
+    a(href='/movies?'+movie._id) #{movie.Title}
+
+br
+
+
+
+
+script(type = module)
+  include ../followButton.js

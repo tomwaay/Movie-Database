@@ -1,0 +1,70 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Movie Database</title>
+  <link rel="stylesheet" href="../stylesheet.css">
+</head>
+<a href="/home">Home</a>
+
+<a href="/profile">Profile</a>
+
+<a href="/userauth">Sign In/Up</a>
+
+<a href="/search">Search</a>
+
+<a href="/contribute">Contribute</a>
+
+<br>
+
+<b>Username: notBatman</b><br>
+
+<b>Account Type:</b><br>
+<input type="radio" value="regular" id="accRegular" name= "acctype" checked>
+<label for="accRegular">Regular</label>
+<br>
+<input type="radio" value="contributing" name="acctype" id="accContributing">
+<label for="accContributing">Contributing</label>
+<br>
+<input type="button" value="Save" class="button" id="acctypeSave"><br>
+
+<b>People you follow:</b><br>
+<ul>
+  <li><input type="button" value="Unfollow" class="button" id="unfollowPerson"><a href="/person">Gilbert Godfrey</a>
+  <li><input type="button" value="Unfollow" class="button" id="unfollowPerson"><a href="/person">Michael Bay</a>
+  <li><input type="button" value="Unfollow" class="button" id="unfollowPerson"><a href="/person">George Soros</a>
+</ul>
+
+
+<b>Users you follow:</b><br>
+<ul>
+  <li><input type="button" value="Unfollow" class="button" id="unfollowUser"><a href="/profile">Michael Runtz</a>
+  <li><input type="button" value="Unfollow" class="button" id="unfollowUser"><a href="/profile">Jim Davies</a>
+</ul>
+
+<b>Movies you've watched:</b><br>
+<ul>
+  <li><input type="button" value="Remove" class="button" id="removeMovie"><a href="/movie">Step Brothers</a>
+  <li><input type="button" value="Remove" class="button" id="removeMovie"><a href="/movie">Elf</a>
+  <li><input type="button" value="Remove" class="button" id="removeMovie"><a href="/movie">Click</a>
+</ul>
+
+<b>Reccomended Movies:</b><br>
+<ul>
+  <li><a href="/movie">Up</a>
+  <li><a href="/movie">Shrek 2</a>
+</ul>
+
+<b>Notifications:</b><br>
+<ul>
+  <li><input type="button" value="Delete" class="button" id="delNotif"><input type="button" value="View" class="button" id="viewNotif"> The new Star Wars isnt great. Check out the reviews.
+</ul>
+
+
+
+
+<body>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
